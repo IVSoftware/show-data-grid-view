@@ -1,0 +1,46 @@
+﻿<Page 
+    x:Class="show_data_grid_view.ChooseDepPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:local="clr-namespace:show_data_grid_view"
+    xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+    mc:Ignorable="d" 
+    d:DesignHeight="450" d:DesignWidth="800"
+    Title="SelectedDepPageVer2">
+    <Grid 
+        x:Name="grid1"
+        Background="LightGreen">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.10*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="0.24*"/>
+        </Grid.ColumnDefinitions>
+        <Border 
+        Grid.Row="1" 
+        Grid.Column="0"
+        BorderBrush="Azure" 
+        BorderThickness="10">
+            <WindowsFormsHost
+            x:Name="windowsFormsHost">
+                <wf:DataGridView 
+                x:Name="StaffDGV" 
+                RowHeadersVisible="False"
+                ReadOnly="True" 
+                SelectionMode="FullRowSelect" 
+                AllowUserToResizeRows="False"
+                AutoSizeColumnsMode="Fill"
+                DoubleClick="StaffDGV_DoubleClick" 
+                SelectionChanged="StaffDGV_SelectionChanged"
+                AutoGenerateColumns="False"
+                BackgroundColor="WhiteSmoke"
+                Dock="Fill"/>
+            </WindowsFormsHost>
+        </Border>
+    </Grid>
+</Page>
